@@ -25,7 +25,7 @@ qr_image = qr.make_image(fill_color="black", back_color="white", image_factory=S
 qr_image = qr_image.convert("RGB")
 
 # Open the Kiwanis Port Vila logo
-logo = Image.open("kiwanis_port_vila_logo.jpg")
+logo = Image.open("kiwanis_port_vila_logo.png")
 
 # Calculate the size of the logo (reduced to 15% of the QR code size)
 logo_size = int(qr_image.size[0] * 0.15)
