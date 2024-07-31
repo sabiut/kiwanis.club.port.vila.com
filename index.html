@@ -9,8 +9,7 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
             padding: 20px;
             background-color: #f4f4f4;
         }
@@ -19,16 +18,21 @@
             border-radius: 8px;
             padding: 30px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
         }
         h1 {
             color: #0072ce;
             text-align: center;
             margin-bottom: 30px;
+            font-size: 2rem;
         }
         .logo {
             display: block;
             margin: 0 auto 20px;
             max-width: 200px;
+            width: 100%;
+            height: auto;
         }
         .info-section {
             margin-bottom: 20px;
@@ -38,13 +42,16 @@
             border-bottom: 2px solid #0072ce;
             padding-bottom: 5px;
             margin-bottom: 10px;
+            font-size: 1.5rem;
         }
         .info-item {
             margin-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
         }
         .info-item strong {
-            display: inline-block;
-            width: 100px;
+            min-width: 100px;
+            margin-right: 10px;
         }
         .reference {
             background-color: #e6f3ff;
@@ -57,6 +64,27 @@
             font-style: italic;
             margin-top: 30px;
         }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .info-section h2 {
+                font-size: 1.2rem;
+            }
+            .info-item {
+                flex-direction: column;
+            }
+            .info-item strong {
+                min-width: auto;
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -66,10 +94,10 @@
         
         <div class="info-section">
             <h2>Payment Information</h2>
-            <div class="info-item"><strong>Bank:</strong> BSP</div>
-            <div class="info-item"><strong>Swift:</strong> BOSPVUVX</div>
-            <div class="info-item"><strong>BSB:</strong> 039033</div>
-            <div class="info-item"><strong>Account:</strong> 2000 359154</div>
+            <div class="info-item"><strong>Bank:</strong> <span>BSP</span></div>
+            <div class="info-item"><strong>Swift:</strong> <span>BOSPVUVX</span></div>
+            <div class="info-item"><strong>BSB:</strong> <span>039033</span></div>
+            <div class="info-item"><strong>Account:</strong> <span>2000 359154</span></div>
         </div>
 
         <div class="reference">

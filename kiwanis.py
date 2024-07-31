@@ -3,20 +3,8 @@ from PIL import Image
 from qrcode.image.styledpil import StyledPilImage
 from qrcode.image.styles.moduledrawers import RoundedModuleDrawer
 
-# Create a custom formatted string
-custom_data = """KIWANISINFO:
-KIWANIS CLUB OF PORT VILA
-
-Bank: BSP
-Swift: BOSPVUVX
-BSB: 039033
-Acc: 2000 359154
-
-REFERENCE:
-Please include your name if you are an individual, the table name if you have booked as a group, or your organization name as the payment reference.
-
-Thank you for your support!
-"""
+# Replace this with your actual Netlify URL
+netlify_url = "https://sabiut.github.io/kiwanis.club.port.vila.com/"
 
 # Create QR code instance
 qr = qrcode.QRCode(
@@ -26,8 +14,8 @@ qr = qrcode.QRCode(
     border=4,
 )
 
-# Add the custom data
-qr.add_data(custom_data)
+# Add the Netlify URL
+qr.add_data(netlify_url)
 qr.make(fit=True)
 
 # Create an image from the QR code with rounded modules
@@ -54,6 +42,6 @@ background.paste(logo, (0, 0), logo if logo.mode == 'RGBA' else None)
 qr_image.paste(background, pos)
 
 # Save the final image
-qr_image.save("kiwanis_club_qr_with_logo_custom.png")
+qr_image.save("kiwanis_club_qr_netlify.png")
 
-print("QR code with Kiwanis Port Vila logo has been generated and saved as 'kiwanis_club_qr_with_logo_custom.png'")
+print("QR code with Kiwanis Port Vila logo has been generated and saved as 'kiwanis_club_qr_netlify.png'")
